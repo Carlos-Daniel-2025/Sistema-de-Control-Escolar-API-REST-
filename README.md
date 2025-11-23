@@ -62,6 +62,38 @@ DELETE	    /api/grades/{id}	                    //Eliminar calificación
 GET	        /api/grades/student/{student_id}	    //Ver calificaciones de un estudiante
 __________________________________________________________
 
+//cURL DE POSTMAN (EJEMPLOS DE PETICIONES)
+
+//EJEMPLO DE DELETE STUDENT 2
+
+curl --location --request DELETE 'http://localhost:3030/api/students/2' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Ximena Diaz Sanchez",
+    "group": "3A",
+    "email": "ximenadisa45@gmail.com"
+}'
+
+//EJEMPLO DE POST EN MATERIAS
+
+curl --location 'http://localhost:3030/api/subjects' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "Fisica"
+}'
+
+//EJEMPLOS DE GET EN GRADES STUDENT 2
+
+curl --location --request GET 'http://localhost:3030/api/grades/student/2' \
+--header 'Content-Type: application/json' \
+--data '{
+    "student_id": 3,
+    "subject_id": 1,
+    "grade": 7.0
+}'
+___________________________________________________________
+
+
 HERRAMIENTAS USADAS PARA ESTE PROYECTO
 
 1. Go 1.25
